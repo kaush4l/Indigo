@@ -1,4 +1,6 @@
-package model;
+package indigo.model;
+
+import javax.validation.constraints.Size;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -11,14 +13,23 @@ public class User {
 
 	@Id // Should be String to avoid duplicate key error.
 	private String id;
-//
-//	public long getId() {
-//		return id;
-//	}
-//
-//	public void setId(long id) {
-//		this.id = id;
-//	}
+
+	/**
+	 * First name of the User
+	 */
+	@Size(min = 2, max = 30)
+	private String firstName;
+
+	/**
+	 * Last name of the User
+	 */
+	@Size(min = 2, max = 30)
+	private String lastName;
+
+	/**
+	 * Email of the person
+	 */
+	private String email;
 
 	public String getFirstName() {
 		return firstName;
@@ -51,21 +62,6 @@ public class User {
 	public void setActive(boolean isActive) {
 		this.isActive = isActive;
 	}
-
-	/**
-	 * First name of the User
-	 */
-	private String firstName;
-
-	/**
-	 * Last name of the User
-	 */
-	private String lastName;
-
-	/**
-	 * Email of the person
-	 */
-	private String email;
 
 	/**
 	 * To know active status and to soft delete the User record from the database.

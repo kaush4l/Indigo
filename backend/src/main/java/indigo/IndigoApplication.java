@@ -4,20 +4,21 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.data.mongodb.repository.config.EnableMongoRepositories;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import dao.UserRepository;
-import model.User;
+import indigo.dao.UserRepository;
+import indigo.model.User;
 
 /**
  * The main class for the SpringBootApplication containing the main method. This
  * is also the template class for the bean's
  */
+@ComponentScan
 @RestController
 @SpringBootApplication
-@EnableMongoRepositories(basePackageClasses = UserRepository.class)
 public class IndigoApplication implements CommandLineRunner {
 
 	@Autowired

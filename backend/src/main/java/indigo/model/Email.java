@@ -1,4 +1,4 @@
-package model;
+package indigo.model;
 
 /**
  * Model class for email object
