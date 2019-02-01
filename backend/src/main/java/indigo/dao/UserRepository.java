@@ -1,10 +1,10 @@
-package dao;
+package indigo.dao;
 
 import java.util.List;
 
 import org.springframework.data.mongodb.repository.MongoRepository;
 
-import model.User;
+import indigo.model.User;
 
 public interface UserRepository extends MongoRepository<User, String> {
 
