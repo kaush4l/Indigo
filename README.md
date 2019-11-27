@@ -25,10 +25,18 @@
 Open Visual studio code.
 Select New → Open Folder and select frontend folder from backend\src\main\webapp\frontend
 
-To run the program select the Integrated Termial from View → Integrated Termial or use shortcut (ctrl+`) and it should open a terminal from the reactjs location
-OR go to reactjs folder and open command window.
-Then type 
-	npm start 
+To run the program select the Integrated Termial from 
+
+_*View → Integrated Termial or use shortcut (ctrl+`)*_ 
+
+and it should open a terminal from the reactjs location
+
+OR 
+
+go to reactjs folder and open command window.
+Then run
+>	npm start 
+
 This is build the project and open the react project in localhost:3000 
 
 
@@ -40,8 +48,10 @@ select pom.xml and click finish.
 
 Once project is loaded, right click on project and run as → maven clean install.
 
-The right click on project and run as → maven build.
+Thne right click on project and run as → maven build.
 Under goals specify eclipse:eclipse.
 Apply and run build.
 
 Project has been setup and can be run as a Spring boot application.
+
+Run as maven project
