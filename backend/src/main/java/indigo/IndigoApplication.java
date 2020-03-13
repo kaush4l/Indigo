@@ -35,7 +35,7 @@ public class IndigoApplication implements CommandLineRunner {
 
 	@RequestMapping("/")
 	String home() {
-		return "Hello World!";
+		return "Hello Docker World!";
 	}
 
 	@Override

@@ -41,17 +41,34 @@ This is build the project and open the react project in localhost:3000
 
 
 ## Backend (Spring boot):
-Open eclipse IDE.
-Select import -> Add new Maven project -> Load backend folder of the project.
 
-select pom.xml and click finish.
-
-Once project is loaded, right click on project and run as → maven clean install.
-
-Thne right click on project and run as → maven build.
-Under goals specify eclipse:eclipse.
-Apply and run build.
+### Running using eclipse IDE.
+- Open Eclipse
+- Select import -> Add new Maven project -> Load backend folder of the project.
+- select pom.xml and click finish.
+- Once project is loaded, right click on project and run as → maven clean install.
+- Then right click on project and run as → maven build.
+- Under goals specify eclipse:eclipse.
+- Apply and run build.
 
 Project has been setup and can be run as a Spring boot application.
 
 Run as maven project
+
+### Running using command line
+
+Navigate to the backend folder of the project
+~~~
+$ mvn clean install // To build the project
+$ java -jar target/Indigo-<version-number>.jar // To run the project from the jar file(Didn't mention main class as there is only 1)
+~~~
+
+### Runnning using Docker container
+
+Docker should be installed and the should be running already
+Use 'sudo' if required
+
+~~~
+$ docker build -t indigo . // builds the docker image with the tag name indigo:latest
+$ docker run -p 8080:8080 -t indigo //Deploys the image in a docker container
+~~~
