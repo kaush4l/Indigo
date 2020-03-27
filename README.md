@@ -19,11 +19,12 @@
 	Go to your desired work location and open command prompt from that folder
 	Then use the following commands:	
 		git clone http://github.com/kaush4l/Indigo.git
+		git clone http://github.com/kaush4l/Indigo_client.git
 
 # Setting up Workspace
 ## Frontend (ReactJS):
 Open Visual studio code.
-Select New → Open Folder and select frontend folder from backend\src\main\webapp\frontend
+Select New → Open Folder and select Indigo_client project
 
 To run the program select the Integrated Termial from 
 
@@ -33,18 +34,17 @@ and it should open a terminal from the reactjs location
 
 OR 
 
-go to reactjs folder and open command window.
+go to root folder and open command window.
 Then run
 >	npm start 
 
 This is build the project and open the react project in localhost:3000 
 
-
 ## Backend (Spring boot):
 
 ### Running using eclipse IDE.
 - Open Eclipse
-- Select import -> Add new Maven project -> Load backend folder of the project.
+- Select import -> Add new Maven project -> Load root folder of the project.
 - select pom.xml and click finish.
 - Once project is loaded, right click on project and run as → maven clean install.
 - Then right click on project and run as → maven build.
@@ -57,7 +57,7 @@ Run as maven project
 
 ### Running using command line
 
-Navigate to the backend folder of the project
+Navigate to the root folder of the project
 ~~~
 $ mvn clean install // To build the project
 $ java -jar target/Indigo-<version-number>.jar // To run the project from the jar file(Didn't mention main class as there is only 1)
@@ -72,3 +72,9 @@ Use 'sudo' if required
 $ docker build -t indigo . // builds the docker image with the tag name indigo:latest
 $ docker run -p 8080:8080 -t indigo //Deploys the image in a docker container
 ~~~
+
+## Learning to add
+ - Java testing?!!
+ - Currently a maven project try converting to gradle
+ - adding of security aspects
+ - MongoDB is configured change to Firebase
