@@ -22,27 +22,8 @@
 		git clone http://github.com/kaush4l/Indigo_client.git
 
 # Setting up Workspace
-## Frontend (ReactJS):
-Open Visual studio code.
-Select New → Open Folder and select Indigo_client project
 
-To run the program select the Integrated Termial from 
-
-_*View → Integrated Termial or use shortcut (ctrl+`)*_ 
-
-and it should open a terminal from the reactjs location
-
-OR 
-
-go to root folder and open command window.
-Then run
->	npm start 
-
-This is build the project and open the react project in localhost:3000 
-
-## Backend (Spring boot):
-
-### Running using eclipse IDE.
+## Running using eclipse IDE(Maven)
 - Open Eclipse
 - Select import -> Add new Maven project -> Load root folder of the project.
 - select pom.xml and click finish.
@@ -55,15 +36,30 @@ Project has been setup and can be run as a Spring boot application.
 
 Run as maven project
 
-### Running using command line
-
+## Running on command line
 Navigate to the root folder of the project
+### [Maven](https://docs.spring.io/spring-boot/docs/1.4.1.RELEASE/reference/html/getting-started-first-application.html)
 ~~~
 $ mvn clean install // To build the project
-$ java -jar target/Indigo-<version-number>.jar // To run the project from the jar file(Didn't mention main class as there is only 1)
+$ mvn spring-boot:run //Spring boot application on maven
 ~~~
 
-### Runnning using Docker container
+### [Gradle](https://javadeveloperzone.com/spring-boot/how-to-run-spring-boot-using-maven-gradle/)
+~~~
+$ gradle clean build // To build the project
+$ gradle bootRun // This runs spring boot application on gradle
+~~~
+
+### Java way
+After either of commands
+- mvn clean install
+- gradle clean build
+
+~~~
+$ java -jar target/Indigo-<version-number>.jar // Run the project from the jar file(Didn't mention main class as there is only 1)
+~~~
+
+## Runnning using Docker container
 
 Docker should be installed and the should be running already
 Use 'sudo' if required
@@ -75,6 +71,8 @@ $ docker run -p 8080:8080 -t indigo //Deploys the image in a docker container
 
 ## Learning to add
  - Java testing?!!
- - Currently a maven project try converting to gradle
+ - ~~[Currently a maven project add gradle support](https://medium.com/@jayanisumudini/convert-maven-project-to-gradle-project-d1a829d7637f)~~
  - adding of security aspects
  - MongoDB is configured change to Firebase
+ - Git webhooks and CICD integration
+ - Jenkins and precommit hooks to building and tesing
