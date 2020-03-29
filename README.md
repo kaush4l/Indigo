@@ -5,15 +5,8 @@
 	GitHub(GUI or command prompt)
 		https://git-scm.com/downloads (command prompt)
 		https://desktop.github.com/ (GUI)
-	Eclipse IDE for Java Developers
-		https://www.eclipse.org/downloads/packages/release/2019-03/r/eclipse-ide-java-developers
 	VisualStudio Code
 		https://code.visualstudio.com/download
-	And NodeJS for npm
-		https://nodejs.org/en/download/
-		Test if this is properly installed by typing the following command in command prompt:
-			node -v
-			npm -v
 		
 ## Check out project:
 	Go to your desired work location and open command prompt from that folder
@@ -22,6 +15,10 @@
 		git clone http://github.com/kaush4l/Indigo_client.git
 
 # Setting up Workspace
+Run the [buildEnv.sh](buildEnv.sh) file to setup the environment.
+~~~
+bash buildEnv.sh
+~~~
 
 ## Running using eclipse IDE(Maven)
 - Open Eclipse
@@ -45,6 +42,7 @@ $ mvn spring-boot:run //Spring boot application on maven
 ~~~
 
 ### [Gradle](https://javadeveloperzone.com/spring-boot/how-to-run-spring-boot-using-maven-gradle/)
+[Material](https://jeoygin.gitbooks.io/learn-y-in-x-minutes/content/gradle.html)
 ~~~
 $ gradle clean build // To build the project
 $ gradle bootRun // This runs spring boot application on gradle
@@ -70,9 +68,13 @@ $ docker run -p 8080:8080 -t indigo //Deploys the image in a docker container
 ~~~
 
 ## Learning to add
+ - Update Docker to use maven and gradle version of java images.(move building of project and starting to docker steps)
  - Java testing?!!
  - ~~[Currently a maven project add gradle support](https://medium.com/@jayanisumudini/convert-maven-project-to-gradle-project-d1a829d7637f)~~
  - adding of security aspects
  - MongoDB is configured change to Firebase
  - Git webhooks and CICD integration
  - Jenkins and precommit hooks to building and tesing
+
+Resources:
+- [Medium groovy explained](https://medium.com/@andrewMacmurray/a-beginners-guide-to-gradle-26212ddcafa8)

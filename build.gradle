@@ -9,8 +9,8 @@ plugins {
 }
 
 repositories {
+    mavenLocal()
     mavenCentral()
-    // mavenLocal()
     // maven {
     //     url = uri('http://repo.maven.apache.org/maven2')
     // }

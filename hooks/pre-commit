@@ -1,0 +1,12 @@
+#!/bin/sh
+
+echo "Always run tests after changes"
+output=$(mvn clean test)
+if [ $? -eq 0 ] # ? is the result for the previous command
+then
+    echo "All tests passed"
+    exit 0
+else
+    echo "Well you tried but something is missing"
+    exit 1
+fi
