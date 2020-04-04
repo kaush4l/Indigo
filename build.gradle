@@ -17,15 +17,24 @@ repositories {
 }
 
 dependencies {
-    implementation 'org.springframework.boot:spring-boot-starter-web:2.0.3.RELEASE'
+    implementation('org.springframework.boot:spring-boot-starter-web:2.0.3.RELEASE') {
+		exclude group: 'org.springframework.boot', module: 'spring-boot-starter-logging'
+    }
     implementation 'org.springframework.boot:spring-boot-devtools:2.0.3.RELEASE'
     implementation 'org.springframework.boot:spring-boot-starter-data-mongodb:2.0.3.RELEASE'
     implementation 'org.springframework.boot:spring-boot-starter-mail:2.0.3.RELEASE'
     implementation 'javax.persistence:persistence-api:1.0.2'
     implementation 'org.springframework.boot:spring-boot-starter-actuator:2.0.3.RELEASE'
-    testImplementation 'junit:junit:4.12'
-    testImplementation 'org.mockito:mockito-all:1.10.19'
+    testImplementation('org.springframework.boot:spring-boot-starter-test:2.0.3.RELEASE') {
+        exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
+	}
+    // testImplementation 'junit:junit:4.12'
+    // testImplementation 'org.mockito:mockito-all:1.10.19'
 }
+
+//test {
+//	useJUnitPlatform()
+//}
 
 group = 'com.project'
 version = '0.0.1'

@@ -1,6 +1,7 @@
 #!/bin/bash
 
 # Enforcing pre commit hooks to run tests before pushing
+echo "Copying files to enforce git hooks."
 cp hooks/pre-commit .git/hooks/pre-commit
 
 # Checking for Java installation
