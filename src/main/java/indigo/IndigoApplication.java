@@ -48,13 +48,6 @@ public class IndigoApplication implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 		// To start with clean state
-		repository.deleteAll();
-		repository.save(new User("John", "Doe"));
-		repository.save(new User("Jim", "Smith"));
-		repository.save(new User("Jon", "Abrarian"));
-		repository.save(new User("Nara", "Rohit"));
-		repository.save(new User("King", "KK"));
-		repository.save(new User("K", "K"));
 		for (User user : repository.findAll())
 			System.out.println(user);
 	}

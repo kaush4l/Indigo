@@ -74,7 +74,7 @@ $ docker build -t indigo . // builds the docker image with the tag name indigo:l
 $ docker run -it --name indigo --rm indigo bash // prefix with winpty if needed for windows
 ~~~
 To map store any data created in doker locally we can map the input volume to local drive
-$ docker run -v <LocalDirectory>:\data --name indigo indigo # /data(shared volume in container)
+$ docker run -v <LocalDirectory>:\data -p 8080:8080 --name indigo indigo # /data(shared volume in container)
 
 The second command directly runs the container and connects it to bash and removes the container once the script is stopped.
 

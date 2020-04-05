@@ -25,6 +25,8 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-mail:2.0.3.RELEASE'
     implementation 'javax.persistence:persistence-api:1.0.2'
     implementation 'org.springframework.boot:spring-boot-starter-actuator:2.0.3.RELEASE'
+    implementation 'org.springframework.boot:spring-boot-starter-security:2.0.3.RELEASE'
+    implementation 'org.thymeleaf.extras:thymeleaf-extras-springsecurity4:2.1.2.RELEASE'
     testImplementation('org.springframework.boot:spring-boot-starter-test:2.0.3.RELEASE') {
         exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
 	}

@@ -1,15 +1,15 @@
 # docker different base images for running using 
 # (1) java 105mb
-# FROM openjdk:8-jdk-alpine
+FROM openjdk:8-jdk-alpine
 
 # (2) maven 220mb
-FROM maven:3.6.3-jdk-8-openj9 
+# FROM maven:3.6.3-jdk-8-openj9 
 
 # (3) gralde 230mb
 # FROM gradle:jre8
 
 # Volume used to store the data generated in the image
-# VOLUME /data
+VOLUME /data
 # Make port 8080 available to the world outside this container
 EXPOSE 8080
 
