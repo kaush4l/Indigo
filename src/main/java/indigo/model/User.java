@@ -2,8 +2,12 @@ package indigo.model;
 
 import javax.validation.constraints.Size;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 
 /**
  * The model for the user to be stored in the database
@@ -11,20 +15,26 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Document(collection = "User")
 public class User {
 
+	public static final PasswordEncoder PASSWORD_ENCODER = new BCryptPasswordEncoder();
+
 	@Id // Should be String to avoid duplicate key error.
 	private String id;
 
 	/**
 	 * First name of the User
 	 */
-	@Size(min = 2, max = 30)
 	private String firstName;
 
 	/**
 	 * Last name of the User
 	 */
-	@Size(min = 2, max = 30)
 	private String lastName;
+
+	private @JsonIgnore String password;
+	/**
+	 * To know active status and to soft delete the User record from the database.
+	 */
+	private boolean isActive;
 
 	/**
 	 * Email of the person
@@ -64,11 +74,6 @@ public class User {
 	}
 
 	/**
-	 * To know active status and to soft delete the User record from the database.
-	 */
-	private boolean isActive;
-
-	/**
 	 * No argument constructor to instantiate the object
 	 */
 	public User() {
@@ -81,10 +86,12 @@ public class User {
 	 * @param lastName
 	 * @param email
 	 */
-	public User(final String firstName, final String lastName) {
+	public User(final String firstName, final String lastName, String password) {
 //		this.id = Long.parseLong(UUID.randomUUID().toString());
 		this.firstName = firstName;
 		this.lastName = lastName;
+		this.password = PASSWORD_ENCODER.encode(password);
+		this.isActive = true;
 	}
 
 	@Override

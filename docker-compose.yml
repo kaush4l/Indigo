@@ -1,0 +1,17 @@
+version: '3.7'
+
+services:
+    indigo:
+        container_name: indigo
+        build: .
+        volumes:
+            - /logs:/data
+        ports: 
+            - "8080:8080"
+    client:
+        container_name: indigo_client
+        build: ../indigo_client/
+        ports:
+            - "3000:3000"
+        volumes:
+            - /SharedVolumeContent:/node_modules
