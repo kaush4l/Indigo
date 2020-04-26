@@ -8,10 +8,10 @@ services:
             - /logs:/data
         ports: 
             - "8080:8080"
-    client:
-        container_name: indigo_client
-        build: ../indigo_client/
-        ports:
-            - "3000:3000"
-        volumes:
-            - /SharedVolumeContent:/node_modules
+    # client:
+    #     container_name: indigo_client
+    #     build: ../indigo_client/
+    #     ports:
+    #         - "3000:3000"
+    #     volumes:
+    #         - /SharedVolumeContent:/node_modules

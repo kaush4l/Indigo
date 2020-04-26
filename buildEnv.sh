@@ -9,29 +9,11 @@ echo "----------------------------------------JAVA------------------------------
 JAVA=$(java -version)
 if [ $? -eq 0 ]
 then
-    echo "Java is present. make sure version is 1.8."
+    echo "Java is present. Make sure version is 1.8."
 else
-    echo "Java has not been installed yet."
+    echo "Looks like java is missing!!!"
 fi
 echo "----------------------------------------JAVA----------------------------------------"
-
-# Check if maven is installed
-echo "----------------------------------------MAVEN----------------------------------------"
-MAVEN=$(mvn -v)
-if [ $? -eq 0 ]
-then
-    echo "Maven is installed."
-    MAVENBUILD=$(gradle clean build)
-    if [ $? -eq 0 ]
-    then
-        echo "Maven build is done and code is ready to use."
-    else
-        echo "Run mvn clean install for the project."
-    fi
-else
-    echo "Maven is not installed. Either maven or gradle is good for learning of the project."
-fi
-echo "----------------------------------------MAVEN----------------------------------------"
 
 # Check if gradle is installed
 echo "----------------------------------------GRADLE----------------------------------------"
@@ -47,7 +29,7 @@ then
         echo "Run gradle clean build for the project."
     fi
 else
-    echo "Maven is not installed. Either maven or gradle is good for learning of the project."
+    echo "Gradle is not installed."
 fi
 echo "----------------------------------------GRADLE----------------------------------------"
 
@@ -58,6 +40,6 @@ if [ $? -eq 0 ]
 then
     echo "Docker is installed."
 else
-    echo "Project is Dockerized. Good to have not necessary."
+    echo "Project is Dockerized. Good to have, not necessary."
 fi
 echo "----------------------------------------DOCKER----------------------------------------"
