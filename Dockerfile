@@ -1,8 +1,7 @@
 # docker different base images for running using 
-# (1) java 105mb
 FROM openjdk:8-jdk-alpine
 
-# (2) gralde 230mb
+# Docker gralde image 230mb
 # FROM gradle:jre8
 
 # Volume used to store the data generated in the image
@@ -11,7 +10,6 @@ VOLUME /data
 EXPOSE 8080
 
 # # Running using jar for Dev
-# # (1) Java (build jar outside)
 ARG JAR_FILE=build/libs/Indigo-0.0.1.jar
 ADD ${JAR_FILE} Indigo-0.0.1.jar
 ENTRYPOINT ["java","-jar","Indigo-0.0.1.jar"]
@@ -20,8 +18,7 @@ ENTRYPOINT ["java","-jar","Indigo-0.0.1.jar"]
 # COPY /src/main /src/main
 
 # Build and run the application for production
-
 # COPY build.gradle build.gradle
 # COPY settings.gradle settings.gradle
-# RUN gradle clean build
+# RUN gradle build
 # CMD ["gradle", "bootRun"]

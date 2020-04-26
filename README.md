@@ -1,24 +1,22 @@
 
 # Project Setup:
 
-## Check out project:
-	Go to your desired work location and open command prompt from that folder
-	Then use the following commands:	
-		git clone http://github.com/kaush4l/Indigo.git
-		git clone http://github.com/kaush4l/Indigo_client.git
+## ~~Check out project:~~
 
 # Setting up Workspace
-<a id="raw-url" href="https://github.com/kaush4l/Indigo/blob/checkPoint/buildEnv.sh" download>Setup script</a>
+Right-Click to download the <a id="raw-url" href="https://github.com/kaush4l/Indigo/blob/checkPoint/buildEnv.sh" download>Setup script</a>
 
-Run the [buildEnv.sh](buildEnv.sh) file to setup the environment.
+Place in the desired work location and run the [setup sctipt](buildEnv.sh) file to download and setup the environment.
+
 
 ~~~
 bash buildEnv.sh
 ~~~
 
-## Running using eclipse IDE (Easy way)
+## _*Workspace setup*_
 
-### As Gradle project
+### *As Gradle eclipse application (Easy way)*
+The application can be run using a click.(GUI) And easy debugging.
 - Open Eclipse
 - Select import -> Add new Gradle project -> Load root folder of the project.
 - select root folder or build.gralde and click finish.
@@ -28,21 +26,18 @@ bash buildEnv.sh
 
 Project has been setup and can be run as a Spring boot application. Run as gradle project
 
-## Running on command line (Recommended way)
+### VSCode
+I prefer VSCode as it looks organized. Use the integrated terminal to run/start the application. Similar to running in command line without an IDE.
+
+## Running on command line
 Navigate to the root folder of the project
 
 ### [Gradle](https://javadeveloperzone.com/spring-boot/how-to-run-spring-boot-using-maven-gradle/)
-[Material](https://jeoygin.gitbooks.io/learn-y-in-x-minutes/content/gradle.html)
+
 ~~~
 $ gradle clean build // To build the project
 $ gradle bootRun // This runs spring boot application on gradle
-~~~
-
-### Java way
-After
-- gradle clean build
-
-~~~
+or
 $ java -jar build/libs/Indigo-<version-number>.jar // Run the project from the jar file(Didn't mention main class as there is only 1)
 ~~~
 
@@ -57,13 +52,18 @@ $ docker build -t indigo . // builds the docker image with the tag name indigo:l
 $ docker run -it --name indigo --rm indigo bash // prefix with winpty if needed for windows
 ~~~
 To map store any data created in doker locally we can map the input volume to local drive
+
 $ docker run -v <LocalDirectory>:\data -p 8080:8080 --name indigo indigo # /data(shared volume in container)
 
 The second command directly runs the container and connects it to bash and removes the container once the script is stopped.
 
 ## Learning to add
  - Re-structured to use Kotlin. Covert existing things first.
- - [Spring docs](https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#boot-features-nosql) has the best documentation.
+ - Dev and Docker hot reloading (Maybe not possible as need to run 2 terminals)
+ ~~~
+ gradle build -continuous or -t // watch
+ gradle bootRun
+ ~~~
  - Update Docker to use gradle version of java images.(move building of project and starting to docker steps)
  - Kotlin testing?!!
  - adding of security aspects
@@ -72,4 +72,6 @@ The second command directly runs the container and connects it to bash and remov
  - Jenkins and precommit hooks to building and tesing
 
 Resources:
+- [Spring docs](https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#boot-features-nosql) has the best documentation.
+- [Gradle X in Y mins](https://jeoygin.gitbooks.io/learn-y-in-x-minutes/content/gradle.html)
 - [Medium groovy explained](https://medium.com/@andrewMacmurray/a-beginners-guide-to-gradle-26212ddcafa8)
