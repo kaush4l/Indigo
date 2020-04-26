@@ -1,17 +1,5 @@
-/target/
-.metadata
-bin/
-tmp/
-*.class
-*.log
-
-### Maven
-.mvn/timing.properties
-.mvn/wrapper/maven-wrapper.jar
-
-### Gradle
-build/
 .gradle
+build/
 
 ### STS ###
 .apt_generated
@@ -27,14 +15,14 @@ build/
 *.iws
 *.iml
 *.ipr
+out/
 
 ### NetBeans ###
 /nbproject/private/
-/build/
 /nbbuild/
 /dist/
 /nbdist/
 /.nb-gradle/
 
-### VSCode
-.vscode
+### VS Code ###
+.vscode/
