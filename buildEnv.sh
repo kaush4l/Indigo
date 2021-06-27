@@ -1,8 +1,8 @@
 #!/bin/bash
 
 # Enforcing pre commit hooks to run tests before pushing
-echo "Copying files to enforce git hooks."
-cp hooks/pre-commit .git/hooks/pre-commit
+# echo "Copying files to enforce git hooks."
+# cp hooks/pre-commit .git/hooks/pre-commit
 
 # Checking for Java installation
 echo "----------------------------------------JAVA----------------------------------------"
@@ -15,27 +15,9 @@ else
 fi
 echo "----------------------------------------JAVA----------------------------------------"
 
-# Check if maven is installed
-echo "----------------------------------------MAVEN----------------------------------------"
-MAVEN=$(mvn -v)
-if [ $? -eq 0 ]
-then
-    echo "Maven is installed."
-    MAVENBUILD=$(gradle clean build)
-    if [ $? -eq 0 ]
-    then
-        echo "Maven build is done and code is ready to use."
-    else
-        echo "Run mvn clean install for the project."
-    fi
-else
-    echo "Maven is not installed. Either maven or gradle is good for learning of the project."
-fi
-echo "----------------------------------------MAVEN----------------------------------------"
-
 # Check if gradle is installed
 echo "----------------------------------------GRADLE----------------------------------------"
-GRADLE=$(gradle -v)
+GRADLE=$(./gradlew -v)
 if [ $? -eq 0 ]
 then
     GRADLEBUILD=$(gradle clean build)

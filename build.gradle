@@ -4,34 +4,49 @@
 
 plugins {
     id 'java'
-    id 'org.springframework.boot' version '2.0.3.RELEASE'
     id 'maven-publish'
+    // id 'checkstyle'
+    id 'org.springframework.boot' version '2.5.2'
+    // id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+    // id "org.mikeneck.graalvm-native-image" version "1.4.1"
+    // id 'org.springframework.experimental.aot' version '0.10.0'
+    // id 'org.graalvm.buildtools.native' version '0.9.0'
 }
 
 repositories {
-    mavenLocal()
+    // mavenLocal()
+    maven { url 'https://repo.spring.io/release' }
     mavenCentral()
     // maven {
     //     url = uri('http://repo.maven.apache.org/maven2')
     // }
 }
 
+ext {
+    springVersion = '2.5.2'
+}
+
 dependencies {
-    implementation('org.springframework.boot:spring-boot-starter-web:2.0.3.RELEASE') {
+    // implementation ("org.springframework.experimental:spring-native:0.10.0")
+    implementation("org.springframework.boot:spring-boot-starter-web:${project.springVersion}") {
 		exclude group: 'org.springframework.boot', module: 'spring-boot-starter-logging'
     }
-    implementation 'org.springframework.boot:spring-boot-devtools:2.0.3.RELEASE'
-    implementation 'org.springframework.boot:spring-boot-starter-data-mongodb:2.0.3.RELEASE'
-    implementation 'org.springframework.boot:spring-boot-starter-mail:2.0.3.RELEASE'
+    implementation "org.springframework.boot:spring-boot-devtools:${project.springVersion}"
+    implementation "org.springframework.boot:spring-boot-starter-data-mongodb:${project.springVersion}"
+    implementation "org.springframework.boot:spring-boot-starter-mail:${project.springVersion}"
     implementation 'javax.persistence:persistence-api:1.0.2'
-    implementation 'org.springframework.boot:spring-boot-starter-actuator:2.0.3.RELEASE'
-    implementation 'org.springframework.boot:spring-boot-starter-security:2.0.3.RELEASE'
-    implementation 'org.thymeleaf.extras:thymeleaf-extras-springsecurity4:2.1.2.RELEASE'
-    testImplementation('org.springframework.boot:spring-boot-starter-test:2.0.3.RELEASE') {
-        exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
-	}
-    // testImplementation 'junit:junit:4.12'
-    // testImplementation 'org.mockito:mockito-all:1.10.19'
+    implementation "org.springframework.boot:spring-boot-starter-actuator:${project.springVersion}"
+    implementation "org.springframework.boot:spring-boot-starter-security:${project.springVersion}"
+    implementation "org.thymeleaf.extras:thymeleaf-extras-springsecurity4:3.0.4.RELEASE"
+    implementation 'com.discord4j:discord4j-core:3.1.5'
+    // testImplementation("org.springframework.boot:spring-boot-starter-test:${project.springVersion}")
+}
+
+bootBuildImage {
+    builder = "paketobuildpacks/builder:full" //tiny || base || full
+    environment = [
+        "BP_NATIVE_IMAGE" : "true"
+    ]
 }
 
 //test {
@@ -43,13 +58,13 @@ version = '0.0.1'
 description = 'Indigo'
 sourceCompatibility = '1.8'
 
-publishing {
-    publications {
-        maven(MavenPublication) {
-            from(components.java)
-        }
-    }
-}
+// publishing {
+//     publications {
+//         maven(MavenPublication) {
+//             from(components.java)
+//         }
+//     }
+// }
 
 tasks.withType(JavaCompile) {
     options.encoding = 'UTF-8'

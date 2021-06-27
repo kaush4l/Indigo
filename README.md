@@ -14,18 +14,9 @@ Run the [buildEnv.sh](buildEnv.sh) file to setup the environment.
 bash buildEnv.sh
 ~~~
 
-## Running using eclipse IDE (Easy way)
-### As Maven project
-- Open Eclipse
-- Select import -> Add new Maven project -> Load root folder of the project.
-- select pom.xml and click finish.
-- Once project is loaded, right click on project and run as → maven clean install.
-- Then right click on project and run as → maven build.
-- Under goals specify eclipse:eclipse.
-- Apply and run build.
+## Running using eclipse IDE
 
-[Notes](https://medium.com/@jayanisumudini/convert-maven-project-to-gradle-project-d1a829d7637f)
-Project has been setup and can be run as a Spring boot application. Run as maven project
+[Maven notes](https://medium.com/@jayanisumudini/convert-maven-project-to-gradle-project-d1a829d7637f)
 
 ### As Gradle project
 - Open Eclipse
@@ -38,14 +29,8 @@ Project has been setup and can be run as a Spring boot application. Run as maven
 Project has been setup and can be run as a Spring boot application. Run as gradle project
 
 
-## Running on command line (Recommended way)
+## Running on command line
 Navigate to the root folder of the project
-
-### [Maven](https://docs.spring.io/spring-boot/docs/1.4.1.RELEASE/reference/html/getting-started-first-application.html)
-~~~
-$ mvn clean install // To build the project
-$ mvn spring-boot:run //Spring boot application on maven
-~~~
 
 ### [Gradle](https://javadeveloperzone.com/spring-boot/how-to-run-spring-boot-using-maven-gradle/)
 [Material](https://jeoygin.gitbooks.io/learn-y-in-x-minutes/content/gradle.html)
@@ -55,8 +40,7 @@ $ gradle bootRun // This runs spring boot application on gradle
 ~~~
 
 ### Java way
-After either of commands
-- mvn clean install
+After 
 - gradle clean build
 
 ~~~

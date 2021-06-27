@@ -1,11 +1,11 @@
-package indigo;
+// package indigo;
 
-import org.junit.Test;
-import org.springframework.boot.test.context.SpringBootTest;
+// import org.junit.jupiter.api.Test;
+// import org.springframework.boot.test.context.SpringBootTest;
 
-@SpringBootTest
-public class IndigoApplicationTest {
+// @SpringBootTest
+// public class IndigoApplicationTest {
 	
-	@Test
-	public void contexLoads(){}
-}
+// 	@Test
+// 	public void contexLoads(){}
+// }
