@@ -15,7 +15,7 @@ plugins {
 
 repositories {
     // mavenLocal()
-    maven { url 'https://repo.spring.io/release' }
+    // maven { url 'https://repo.spring.io/release' }
     mavenCentral()
     // maven {
     //     url = uri('http://repo.maven.apache.org/maven2')

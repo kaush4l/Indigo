@@ -5,7 +5,7 @@ public class DiscordWatcher extends WatcherService {
 
     @Override
     public void run() {
-
+        System.out.println("Thread started");
     }
 
 }

@@ -10,6 +10,7 @@ import org.springframework.context.annotation.ComponentScan;
 
 import indigo.dao.UserRepository;
 import indigo.model.User;
+import indigo.service.*;
 
 /**
  * The main class for the SpringBootApplication containing the main method. This
@@ -17,7 +18,8 @@ import indigo.model.User;
  */
 @ComponentScan
 @SpringBootApplication
-public class IndigoApplication implements CommandLineRunner {
+// public class IndigoApplication implements CommandLineRunner {
+	public class IndigoApplication {
 
 	@Autowired
 	private UserRepository repository;
@@ -32,7 +34,11 @@ public class IndigoApplication implements CommandLineRunner {
 	 */
 	public static void main(String[] args) {
 		System.out.println("Current Directory = " + System.getProperty("user.dir"));
+		
 		SpringApplication.run(IndigoApplication.class, args);
+		Runnable thread = new DiscordWatcher();
+		thread.run();
+
 		logger.debug("This is a debug message");
         logger.info("This is an info message");
         logger.warn("This is a warn message");
@@ -45,11 +51,11 @@ public class IndigoApplication implements CommandLineRunner {
 	 * 
 	 * @param args
 	 */
-	@Override
-	public void run(String... args) throws Exception {
-		// To start with clean state
-		for (User user : repository.findAll())
-			System.out.println(user);
-	}
+	// @Override
+	// public void run(String... args) throws Exception {
+	// 	// To start with clean state
+	// 	for (User user : repository.findAll())
+	// 		System.out.println(user);
+	// }
 
 }

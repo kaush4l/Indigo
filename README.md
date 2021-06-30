@@ -1,6 +1,10 @@
 
 # Project Setup:
 
+## Preferred way 
+Install VSCode or VSCodium
+Use the remote SSH button to connect to server so that changes can tested on server itself.
+
 ## Check out project:
 	Go to your desired work location and open command prompt from that folder
 	Then use the following commands:	
