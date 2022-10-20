@@ -14,15 +14,8 @@ Run the [buildEnv.sh](buildEnv.sh) file to setup the environment.
 bash buildEnv.sh
 ~~~
 
-## Running using eclipse IDE (Easy way)
-~~### As Maven project~~ Use Gradle way
-- Open Eclipse
-- Select import -> Add new Maven project -> Load root folder of the project.
-- select pom.xml and click finish.
-- Once project is loaded, right click on project and run as → maven clean install.
-- Then right click on project and run as → maven build.
-- Under goals specify eclipse:eclipse.
-- Apply and run build.
+## IDE
+Use any IDE you prefer eclipse, intellij or vsCode
 
 [Notes](https://medium.com/@jayanisumudini/convert-maven-project-to-gradle-project-d1a829d7637f)
 Project has been setup and can be run as a Spring boot application. Run as maven project
@@ -37,11 +30,7 @@ Project has been setup and can be run as a Spring boot application. Run as maven
 
 Project has been setup and can be run as a Spring boot application. Run as gradle project
 
-
-## Running on command line (Recommended way)
-Navigate to the root folder of the project
-
-Cannot maintain 2 build systems. So remving Maven use. Keeping files for reference.
+Cannot maintain 2 build systems. So removing Maven. Keeping files for reference.
 
 ~~### [Maven](https://docs.spring.io/spring-boot/docs/2.0.3.RELEASE/reference/html/getting-started-first-application.html)~~
 ~~~
@@ -55,19 +44,14 @@ $ gradle clean build // To build the project
 $ gradle bootRun // This runs spring boot application on gradle
 ~~~
 
-### Java way
-After either of commands
-
-~~- mvn clean install~~
-- gradle clean build
-
+### Running the jar application
 ~~~
 $ java -jar target/Indigo-<version-number>.jar // Run the project from the jar file(Didn't mention main class as there is only 1)
 ~~~
 
 ## Runnning using Docker container
 
-Docker should be installed and the should be running already
+Docker should be installed and should be running already
 Use 'sudo' if required
 [Material](https://rominirani.com/docker-tutorial-series-a7e6ff90a023)
 ~~~
@@ -80,6 +64,11 @@ $ docker run -v <LocalDirectory>:\data -p 8080:8080 --name indigo indigo # /data
 
 The second command directly runs the container and connects it to bash and removes the container once the script is stopped.
 
+## Updating and upgrading docs
+- Upgrading [gradle](https://docs.gradle.org/current/userguide/gradle_wrapper.html)
+- Latest [Sprinf=g boot](https://mvnrepository.com/artifact/org.springframework.boot/spring-boot)
+
+
 ## Learning to add
  - [Spring docs](https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#boot-features-nosql) has the best documentation.
  - Update Docker to use maven and gradle version of java images.(move building of project and starting to docker steps)
@@ -88,6 +77,7 @@ The second command directly runs the container and connects it to bash and remov
  - MongoDB is configured change to Firebase
  - Git webhooks and CICD integration
  - Jenkins and precommit hooks to building and tesing
+
 
 Resources:
 - [Medium groovy explained](https://medium.com/@andrewMacmurray/a-beginners-guide-to-gradle-26212ddcafa8)

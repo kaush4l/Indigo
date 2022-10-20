@@ -17,12 +17,11 @@ else
 fi
 echo "----------------------------------------JAVA----------------------------------------"
 
-# BUILD = $(.mvnw clean install) # Maven build
 BUILD=$(./gradlew clean build) # Gradle build
 if [ $? -eq 0 ] then
     echo "build is done and subsequent builds will be faster with gradlew."
 else
-    echo "Can use either ./gradlew or ./mvnw files for the builds."
+    echo "Cannot use ./gradlew for the builds."
 fi
 
 # Check if docker is installed

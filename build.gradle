@@ -4,7 +4,7 @@
 
 plugins {
     id 'java'
-    id 'org.springframework.boot' version '2.3.4.RELEASE'
+    id 'org.springframework.boot' version '2.7.4'
     id 'maven-publish'
 }
 
@@ -19,7 +19,7 @@ repositories {
 }
 
 dependencies {
-    def springBootVersion = "2.3.4.RELEASE"
+    def springBootVersion = "2.7.4"
     implementation("org.springframework.boot:spring-boot-starter-web:$springBootVersion") {
 		exclude group: 'org.springframework.boot', module: 'spring-boot-starter-logging'
     }
