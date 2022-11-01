@@ -1,6 +1,6 @@
 package indigo.model;
 
-import javax.validation.constraints.Size;
+// import javax.validation.constraints.Size;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 

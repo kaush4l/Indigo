@@ -4,9 +4,11 @@
 
 plugins {
     id 'java'
-    id 'org.springframework.boot' version '2.0.3.RELEASE'
+    id 'org.springframework.boot' version '2.7.4'
     id 'maven-publish'
 }
+
+// ext['springBootVersion'] = '2.3.4.RELEASE'
 
 repositories {
     mavenLocal()
@@ -17,25 +19,28 @@ repositories {
 }
 
 dependencies {
-    implementation('org.springframework.boot:spring-boot-starter-web:2.0.3.RELEASE') {
+    def springBootVersion = "2.7.4"
+    implementation("org.springframework.boot:spring-boot-starter-web:$springBootVersion") {
 		exclude group: 'org.springframework.boot', module: 'spring-boot-starter-logging'
     }
-    implementation 'org.springframework.boot:spring-boot-devtools:2.0.3.RELEASE'
-    implementation 'org.springframework.boot:spring-boot-starter-data-mongodb:2.0.3.RELEASE'
-    implementation 'org.springframework.boot:spring-boot-starter-mail:2.0.3.RELEASE'
+    implementation "org.springframework.boot:spring-boot-devtools:$springBootVersion"
+    implementation "org.springframework.boot:spring-boot-starter-data-mongodb:$springBootVersion"
+    implementation "org.springframework.boot:spring-boot-starter-mail:$springBootVersion"
     implementation 'javax.persistence:persistence-api:1.0.2'
-    implementation 'org.springframework.boot:spring-boot-starter-actuator:2.0.3.RELEASE'
-    implementation 'org.springframework.boot:spring-boot-starter-security:2.0.3.RELEASE'
-    implementation 'org.thymeleaf.extras:thymeleaf-extras-springsecurity4:2.1.2.RELEASE'
-    testImplementation('org.springframework.boot:spring-boot-starter-test:2.0.3.RELEASE') {
+    implementation "org.springframework.boot:spring-boot-starter-actuator:$springBootVersion"
+    implementation "org.springframework.boot:spring-boot-starter-security:$springBootVersion"
+    implementation "org.thymeleaf.extras:thymeleaf-extras-springsecurity4:2.1.2.RELEASE"
+    testImplementation("org.springframework.boot:spring-boot-starter-test:$springBootVersion") {
         exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
 	}
-    // testImplementation 'junit:junit:4.12'
+    testImplementation 'junit:junit:4.12'
     // testImplementation 'org.mockito:mockito-all:1.10.19'
 }
 
 //test {
 //	useJUnitPlatform()
+//  useJUnit()
+//  maxHeapSize = '1G'
 //}
 
 group = 'com.project'
